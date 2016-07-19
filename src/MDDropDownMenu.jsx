@@ -45,7 +45,7 @@ class MDDropDownMenu extends Component {
       <div className={styles.dropdown} style={widthStyle}>
         <div className={styles.selected} style={heightStyle}>
           <div>{defaultOption}</div>
-          <div>▾</div>
+          <span><i className="fa fa-chevron-down"></i></span>
         </div>
         <div className={styles.options}>
           <ul style={widthStyle}>

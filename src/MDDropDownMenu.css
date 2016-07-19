@@ -16,6 +16,7 @@ $green: #2ecc71;
 
   width: $width;
   margin: 0;
+  background-color: white;
   box-sizing: border-box;
 
   .selected {
@@ -47,6 +48,7 @@ $green: #2ecc71;
 
       width: $width;
       margin: 0;
+      background-color: white;
 
       & li {
         position: relative;
@@ -76,4 +78,17 @@ $green: #2ecc71;
   .selected {
     font-weight: 700;
   }
+}
+
+.fa-chevron-down {
+  cursor: pointer;
+  font-size: 15px;
+  transition: .3s;
+  color: $black;
+  &:hover {
+    font-size: 18px;
+    color: #000;
+    transition: .3s;
+  }
+
 }

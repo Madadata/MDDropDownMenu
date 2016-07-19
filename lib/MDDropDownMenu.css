@@ -10,6 +10,7 @@ $height: 2.5em;*/
 
   width: $width;
   margin: 0;
+  background-color: white;
   box-sizing: border-box;
 }
 
@@ -44,6 +45,7 @@ $height: 2.5em;*/
   box-sizing: border-box;
   width: $width;
   margin: 0;
+  background-color: white;
 }
 
 :local .dropdown .options ul li {
@@ -69,4 +71,20 @@ $height: 2.5em;*/
 
 :local .dropdown .selected {
   font-weight: 700;
+}
+
+.fa-chevron-down {
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  color: #4d4d4d
+
+}
+
+.fa-chevron-down:hover {
+  font-size: 18px;
+  color: #000;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
