@@ -1,0 +1,82 @@
+/* variables */
+/* Colors */
+
+:local .default {
+  note: ref;
+}
+
+:local .dropdown {
+  width: 15em;
+  margin: 0 auto;
+  margin-bottom: 1em
+}
+
+:local .dropdown dt {}
+
+:local .dropdown dt a {
+  display: block;
+  height: 2.5em;
+  width: 100%;
+  border: 1px solid #ecf0f1;
+  border-radius: 0px;
+  text-decoration: none;
+}
+
+:local .dropdown dt a:hover, :local .dropdown dt a:active {
+  border-color: #bdc3c7;
+}
+
+:local .dropdown dt span {
+  display: block;
+  padding: 0 1em;
+  line-height: 2.5em;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHo+AACAQQAA+MoAAIC0AAB48QAA9RwAADw3AAAbzhlfIT4AAACJSURBVHjajNAxCsJAEEbhb5cU4i0sbHIaL6IQTxFPo4VeROwXQs4gKW1cWJZEM90wj5l5f0jDeMXBunqENIw7vLD9A09oIxL6FdsvSCENI2zwxH4BTmgxxeJc92P76cuIpRBuc6K45yZWwzPeleixBOLMr30tWgJZuqwcQJNFy2GzkHeHUMPwGQChFSPmzlJ1WgAAAABJRU5ErkJggg==) no-repeat scroll right center;
+  border-right: 1em solid transparent;
+  cursor: pointer;
+}
+
+:local .dropdown dd {
+  position: relative;
+}
+
+:local .dropdown dd ul {
+  display: none;
+  position: absolute;
+  left: -2.5em;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #ecf0f1;
+  border-radius: 0px;
+}
+
+:local .dropdown dd ul li {
+  margin-left: -2.5em;
+}
+
+:local .dropdown dd ul li:first-child a:hover {
+  border-radius: 0px 0px 0 0;
+}
+
+:local .dropdown dd ul li:last-child a:hover {
+  border-radius: 0 0 0px 0px;
+}
+
+:local .dropdown dd li a {
+  display: block;
+  padding: 0 1em;
+  line-height: 2.5em;
+  text-decoration: none;
+}
+
+:local .dropdown dd li a:hover {
+  background-color: #2ecc71;
+  color: #fff;
+  cursor: pointer;
+}
+
+:local .selected {
+  font-weight: 700;
+}
