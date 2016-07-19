@@ -18,3 +18,13 @@
 # Acknowledgement
 ----
 this is inspired by the work done by [Hampus Persson](http://codepen.io/hmps/pen/CbltK). Many thanks.
+
+## Note
+This Component uses FontAwesome icon. So make sure your project has that included.
+```
+npm install font-awesome
+```
+and import the css in your root component or include it in index.html
+```
+import 'font-awesome/css/font-awesome.css';
+```
