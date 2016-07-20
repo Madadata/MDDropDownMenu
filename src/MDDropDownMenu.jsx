@@ -7,7 +7,7 @@ class MDDropDownMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      defaultOption: this.props.defaultOption,
+      selectedOption: this.props.defaultOption,
     };
   }
 
@@ -24,7 +24,7 @@ class MDDropDownMenu extends Component {
 
     dropdown.find('li').click(function() {
       const selectedOption = $(this).html();
-      mdDropDownMenu.setState({ defaultOption: selectedOption });
+      mdDropDownMenu.setState({ selectedOption: selectedOption });
       dropdown.find(`.${localOptions} ul`).hide();
     });
 
@@ -35,16 +35,20 @@ class MDDropDownMenu extends Component {
     });
   }
 
+  componentDidUpdate() {
+    this.props.onSelect(this.state.selectedOption);
+  }
+
   render() {
     const { options, width, height } = this.props;
-    const { defaultOption } = this.state;
+    const { selectedOption } = this.state;
     const widthStyle = { width };
     const heightStyle = { height, lineHeight: `${height}px` };
-    const optionsWithoutDefault = options.filter((option) => option !== defaultOption);
+    const optionsWithoutDefault = options.filter((option) => option !== selectedOption);
     return (
       <div className={styles.dropdown} style={widthStyle}>
         <div className={styles.selected} style={heightStyle}>
-          <div>{defaultOption}</div>
+          <div>{selectedOption}</div>
           <span><i className="fa fa-chevron-down"></i></span>
         </div>
         <div className={styles.options}>
