@@ -23,7 +23,7 @@ class MDDropDownMenu extends Component {
     });
 
     dropdown.find('li').click(function() {
-      const selectedOption = $(this).html();
+      const selectedOption = $(this).html(); 
       mdDropDownMenu.setState({ defaultOption: selectedOption });
       dropdown.find(`.${localOptions} ul`).hide();
     });
@@ -61,8 +61,8 @@ class MDDropDownMenu extends Component {
 }
 
 MDDropDownMenu.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string),
-  defaultOption: PropTypes.string,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  defaultOption: PropTypes.string.isRequired,
   onSelect: PropTypes.func,
   width: PropTypes.number,
   height: PropTypes.number,
