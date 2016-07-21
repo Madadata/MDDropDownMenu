@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import styles from './MDDropDownMenu.css';
+
 import $ from 'jquery';
+import uuid from 'uuid';
 
 class MDDropDownMenu extends Component {
 
@@ -8,6 +10,7 @@ class MDDropDownMenu extends Component {
     super(props);
     this.state = {
       defaultOption: this.props.defaultOption,
+      id: uuid.v1(),
     };
   }
 
@@ -18,7 +21,7 @@ class MDDropDownMenu extends Component {
     const mdDropDownMenu = this;
     const onSelect = this.props.onSelect;
 
-    const dropdown = $(`.${localDropdown}`);
+    const dropdown = $(`#${this.state.id}`);
     dropdown.find(`.${localSelected}`).click(function() {
       dropdown.find(`.${localOptions} ul`).toggle();
     });
@@ -39,12 +42,12 @@ class MDDropDownMenu extends Component {
 
   render() {
     const { options, width, height } = this.props;
-    const { defaultOption } = this.state;
+    const { defaultOption, id } = this.state;
     const widthStyle = { width };
     const heightStyle = { height, lineHeight: `${height}px` };
     const optionsWithoutDefault = options.filter((option) => option !== defaultOption);
     return (
-      <div className={styles.dropdown} style={widthStyle}>
+      <div id={id} className={styles.dropdown} style={widthStyle}>
         <div className={styles.selected} style={heightStyle}>
           <div>{defaultOption}</div>
           <span><i className="fa fa-chevron-down"></i></span>
