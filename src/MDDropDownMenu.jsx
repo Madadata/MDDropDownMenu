@@ -16,6 +16,7 @@ class MDDropDownMenu extends Component {
     const localSelected = styles.selected;
     const localOptions = styles.options;
     const mdDropDownMenu = this;
+    const onSelect = this.props.onSelect;
 
     const dropdown = $(`.${localDropdown}`);
     dropdown.find(`.${localSelected}`).click(function() {
@@ -25,6 +26,7 @@ class MDDropDownMenu extends Component {
     dropdown.find('li').click(function() {
       const selectedOption = $(this).html();
       mdDropDownMenu.setState({ defaultOption: selectedOption });
+      onSelect(selectedOption);
       dropdown.find(`.${localOptions} ul`).hide();
     });
 
