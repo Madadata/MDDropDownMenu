@@ -23,7 +23,7 @@ class MDDropDownMenu extends Component {
     });
 
     dropdown.find('li').click(function() {
-      const selectedOption = $(this).html(); 
+      const selectedOption = $(this).html();
       mdDropDownMenu.setState({ defaultOption: selectedOption });
       dropdown.find(`.${localOptions} ul`).hide();
     });
