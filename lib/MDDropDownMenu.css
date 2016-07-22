@@ -26,13 +26,14 @@ $height: 2.5em;*/
   height: $height;
   padding: 0 1em;
   line-height: $height;
-  border: 1px solid #ecf0f1;
+  border: 0 solid #9b9b9bc;
   border-radius: 0px;
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.50);
   text-decoration: none
 }
 
 :local .dropdown .selected:hover, :local .dropdown .selected:active {
-  border-color: #bdc3c7;
+  border-color: #4a4a4a;
 }
 
 :local .dropdown .options {
@@ -59,8 +60,9 @@ $height: 2.5em;*/
   width: $width;
   list-style: none;
   text-decoration: none;
-  border: 1px solid #ecf0f1;
+  border: 0 solid #9b9b9bc;
   border-top-width: 0px;
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.50);
 }
 
 :local .dropdown .options ul li:hover {
@@ -70,7 +72,7 @@ $height: 2.5em;*/
 }
 
 :local .dropdown .selected {
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .fa-chevron-down {
@@ -78,7 +80,7 @@ $height: 2.5em;*/
   font-size: 15px;
   -webkit-transition: .3s;
   transition: .3s;
-  color: #4d4d4d
+  color: #000000
 
 }
 
