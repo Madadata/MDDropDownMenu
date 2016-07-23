@@ -61,8 +61,8 @@ class MDDropDownMenu extends Component {
 }
 
 MDDropDownMenu.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string),
-  defaultOption: PropTypes.string,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  defaultOption: PropTypes.string.isRequired,
   onSelect: PropTypes.func,
   width: PropTypes.number,
   height: PropTypes.number,
