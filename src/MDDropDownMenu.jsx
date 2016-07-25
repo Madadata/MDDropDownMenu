@@ -34,8 +34,16 @@ class MDDropDownMenu extends Component {
     });
 
     $(document).bind('click', (e) => {
-      if (!$(e.target).parents().hasClass(localDropdown)) {
-        $(`.${localDropdown} ul`).hide();
+      const parents = $(e.target).parents();
+      const target = $(`#${mdDropDownMenu.state.id}`)[0];
+      let parentsHasId = false;
+      Array.from(parents).forEach(parent => {
+        if (parent === target) {
+          parentsHasId = true;
+        }
+      })
+      if (!parentsHasId) {
+        $(`#${mdDropDownMenu.state.id} ul`).hide();
       }
     });
   }
