@@ -1,9 +1,10 @@
 import React from 'react';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { createRenderer } from 'react-addons-test-utils';
 import MDDropDownMenu from 'src/MDDropDownMenu';
+import $ from 'jquery';
 
 expect.extend(expectJSX);
 
@@ -43,7 +44,6 @@ describe('MDDropDownMenu', () => {
       .children()
       .forEach(node => expect(options).toExclude(node.children))
     });
-
   });
 
   describe('with onSelect func', () => {
@@ -60,5 +60,26 @@ describe('MDDropDownMenu', () => {
 
   });
 
+  describe('multiple menus', () => {
+    let wrapper;
+    before(() => {
+      wrapper = mount(
+        <div>
+          <MDDropDownMenu
+            options={['xixi', 'haha']}
+            defaultOption={'xixi'}
+          />
+          <MDDropDownMenu
+            options={['xixi', 'haha']}
+            defaultOption={'xixi'}
+          />
+        </div>
+      );
+    });
+
+    it('opening in one dropdownmenu should close others', () => {
+      // because the styles are ignored. Don't know how to write this test
+    });
+  })
 
 });
