@@ -1,5 +1,6 @@
-# project specific 
+# project specific
 dist/
+lib/
 
 # Git
 .git
