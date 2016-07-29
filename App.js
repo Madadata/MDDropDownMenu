@@ -10,6 +10,11 @@ const App = () => (
       defaultOption="caiyao"
       onSelect={(option) => console.log(option)}
     />
+    <MDDropDownMenu
+      options={['caiyao', 'jiayu', 'yuxiang']}
+      defaultOption="caiyao"
+      onSelect={(option) => console.log(option)}
+    />
   </div>
 );
 

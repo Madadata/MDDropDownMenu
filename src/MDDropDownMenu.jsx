@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import styles from './MDDropDownMenu.css';
+
 import $ from 'jquery';
+import uuid from 'node-uuid';
 
 class MDDropDownMenu extends Component {
 
@@ -8,6 +10,7 @@ class MDDropDownMenu extends Component {
     super(props);
     this.state = {
       defaultOption: this.props.defaultOption,
+      id: uuid.v4(),
     };
   }
 
@@ -16,8 +19,9 @@ class MDDropDownMenu extends Component {
     const localSelected = styles.selected;
     const localOptions = styles.options;
     const mdDropDownMenu = this;
+    const onSelect = this.props.onSelect;
 
-    const dropdown = $(`.${localDropdown}`);
+    const dropdown = $(`#${this.state.id}`);
     dropdown.find(`.${localSelected}`).click(function() {
       dropdown.find(`.${localOptions} ul`).toggle();
     });
@@ -25,24 +29,33 @@ class MDDropDownMenu extends Component {
     dropdown.find('li').click(function() {
       const selectedOption = $(this).html();
       mdDropDownMenu.setState({ defaultOption: selectedOption });
+      onSelect(selectedOption);
       dropdown.find(`.${localOptions} ul`).hide();
     });
 
     $(document).bind('click', (e) => {
-      if (!$(e.target).parents().hasClass(localDropdown)) {
-        $(`.${localDropdown} ul`).hide();
+      const parents = $(e.target).parents();
+      const target = $(`#${mdDropDownMenu.state.id}`)[0];
+      let parentsHasId = false;
+      Array.from(parents).forEach(parent => {
+        if (parent === target) {
+          parentsHasId = true;
+        }
+      })
+      if (!parentsHasId) {
+        $(`#${mdDropDownMenu.state.id} ul`).hide();
       }
     });
   }
 
   render() {
     const { options, width, height } = this.props;
-    const { defaultOption } = this.state;
+    const { defaultOption, id } = this.state;
     const widthStyle = { width };
     const heightStyle = { height, lineHeight: `${height}px` };
     const optionsWithoutDefault = options.filter((option) => option !== defaultOption);
     return (
-      <div className={styles.dropdown} style={widthStyle}>
+      <div id={id} className={styles.dropdown} style={widthStyle}>
         <div className={styles.selected} style={heightStyle}>
           <div>{defaultOption}</div>
           <span><i className="fa fa-chevron-down"></i></span>
