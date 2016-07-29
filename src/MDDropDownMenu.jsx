@@ -15,7 +15,7 @@ class MDDropDownMenu extends Component {
   }
 
   componentDidMount() {
-    const localDropdown = styles.dropdown;
+    /* eslint-disable */
     const localSelected = styles.selected;
     const localOptions = styles.options;
     const mdDropDownMenu = this;
@@ -46,6 +46,7 @@ class MDDropDownMenu extends Component {
         $(`#${mdDropDownMenu.state.id} ul`).hide();
       }
     });
+    /* eslint-enable */
   }
 
   render() {
@@ -63,7 +64,9 @@ class MDDropDownMenu extends Component {
         <div className={styles.options}>
           <ul style={widthStyle}>
             {
-              optionsWithoutDefault.map((option, i) => <li key={i} style={heightStyle}>{option}</li>)
+              optionsWithoutDefault.map((option, i) => (
+                <li key={i} style={heightStyle}>{option}</li>
+              ))
             }
           </ul>
         </div>
@@ -84,6 +87,6 @@ MDDropDownMenu.propTypes = {
 MDDropDownMenu.defaultProps = {
   width: 300,
   height: 40,
-}
+};
 
 export default MDDropDownMenu;

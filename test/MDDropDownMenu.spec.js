@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
@@ -83,3 +84,4 @@ describe('MDDropDownMenu', () => {
   })
 
 });
+/* eslint-disable */

@@ -9,6 +9,7 @@
     "compile:postcss": "postcss  --use precss --use postcss-cssnext -d lib src/*.css",
     "compile:source": "babel src --out-dir lib",
     "prepublish": "npm-run-all clean compile",
+    "lint": "eslint test/**/*.js src/**/*.jsx",
     "clean": "rimraf lib dist",
     "test:watch": "mocha --watch",
     "test": "mocha"
@@ -37,6 +38,11 @@
     "classnames": "2.2.5",
     "css-loader": "0.23.1",
     "enzyme": "2.4.1",
+    "eslint": "3.1.1",
+    "eslint-config-airbnb": "9.0.1",
+    "eslint-plugin-import": "1.12.0",
+    "eslint-plugin-jsx-a11y": "2.0.1",
+    "eslint-plugin-react": "5.2.2",
     "expect": "1.20.2",
     "expect-jsx": "2.6.0",
     "file-loader": "^0.9.0",
@@ -58,6 +64,7 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
+    "babel-eslint": "6.1.2",
     "font-awesome": "4.6.3",
     "jquery": "3.1.0"
   }
