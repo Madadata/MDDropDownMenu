@@ -59,7 +59,6 @@
   },
   "dependencies": {
     "font-awesome": "4.6.3",
-    "jquery": "3.1.0",
-    "uuid": "2.0.2"
+    "jquery": "3.1.0"
   }
 }

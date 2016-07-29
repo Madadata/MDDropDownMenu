@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import styles from './MDDropDownMenu.css';
 
 import $ from 'jquery';
-import uuid from 'uuid';
+import uuid from 'node-uuid';
 
 class MDDropDownMenu extends Component {
 
@@ -10,7 +10,7 @@ class MDDropDownMenu extends Component {
     super(props);
     this.state = {
       defaultOption: this.props.defaultOption,
-      id: uuid.v1(),
+      id: uuid.v4(),
     };
   }
 
