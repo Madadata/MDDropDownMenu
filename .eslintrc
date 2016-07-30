@@ -5,11 +5,5 @@
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true
     }
-  },
-  "rules": {
-    "no-multi-str": 0,
-    "no-loop-func": 0,
-    "no-underscore-dangle": 0,
-    "react/jsx-curly-spacing": "off"
   }
 }

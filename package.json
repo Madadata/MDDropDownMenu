@@ -9,7 +9,7 @@
     "compile:postcss": "postcss  --use precss --use postcss-cssnext -d lib src/*.css",
     "compile:source": "babel src --out-dir lib",
     "prepublish": "npm-run-all clean compile",
-    "lint": "eslint test/**/*.js src/**/*.jsx",
+    "lint": "eslint test src --ext .jsx,.js",
     "clean": "rimraf lib dist",
     "test:watch": "mocha --watch",
     "test": "mocha"
