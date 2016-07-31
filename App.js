@@ -7,7 +7,6 @@ const App = () => (
   <div className={styles.container}>
     <MDDropDownMenu
       options={['caiyao', 'jiayu', 'yuxiang']}
-      defaultOption="caiyao"
       onSelect={(option) => console.log(option)}
     />
     <MDDropDownMenu
