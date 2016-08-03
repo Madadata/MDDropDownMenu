@@ -83,5 +83,23 @@ describe('MDDropDownMenu', () => {
     });
   })
 
+  describe('incomplete inputs', () => {
+
+    let wrapper;
+    before(() => {
+      wrapper = shallow(
+        <MDDropDownMenu
+          options={['xixi', 'haha']}
+        />
+      );
+    })
+
+    it('should present empty string if not default option is provided', () => {
+      const defaultOption = wrapper.childAt(0).childAt(0);
+      expect(defaultOption.text()).toEqual('');
+    })
+
+  });
+
 });
 /* eslint-disable */
