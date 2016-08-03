@@ -40,7 +40,7 @@ $green: #2ecc71;
   }
 
   .options {
-    display: relative;
+    position: relative;
 
     & ul {
       display: none;
