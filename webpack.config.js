@@ -9,9 +9,11 @@ module.exports = {
     filename: 'index.js',
     publicPath: '/dist/',
   },
-  extensions: [
-    "", ".js", ".jsx",
-  ],
+  resolve: {
+    extensions: [
+      "", ".js", ".jsx",
+    ],
+  },
   module: {
     loaders: [
       {
