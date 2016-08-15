@@ -58,7 +58,7 @@ class MDDropDownMenu extends Component {
     return (
       <div id={id} className={styles.dropdown} style={widthStyle}>
         <div className={styles.selected} style={heightStyle}>
-          <div>{defaultOption}</div>
+          <div>{defaultOption || ''}</div>
           <span><i className="fa fa-chevron-down"></i></span>
         </div>
         <div className={styles.options}>
@@ -78,7 +78,7 @@ class MDDropDownMenu extends Component {
 
 MDDropDownMenu.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  defaultOption: PropTypes.string.isRequired,
+  defaultOption: PropTypes.string,
   onSelect: PropTypes.func,
   width: PropTypes.number,
   height: PropTypes.number,
